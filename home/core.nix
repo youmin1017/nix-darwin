@@ -27,6 +27,7 @@
       chezmoi
 
       # languages
+      go
       rustup
     ])
     ++ (with pkgs-stable; [
