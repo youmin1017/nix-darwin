@@ -27,7 +27,7 @@
       chezmoi
 
       # languages
-      rustc
+      rustup
     ])
     ++ (with pkgs-stable; [
       # list of unstable packages

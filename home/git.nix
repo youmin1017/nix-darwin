@@ -47,6 +47,13 @@
       };
     };
 
+    ignores = [
+      ".DS_Store"
+      "Thumbs.db"
+      ".vscode"
+      ".idea"
+    ];
+
     aliases = {
       # common aliases
       br = "branch";
