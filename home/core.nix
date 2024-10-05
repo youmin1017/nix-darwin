@@ -25,6 +25,7 @@
       # productivity
       kitty
       chezmoi
+      arc-browser
 
       # languages
       go
