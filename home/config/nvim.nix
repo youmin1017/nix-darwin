@@ -8,10 +8,10 @@
     vimAlias = true;
   };
 
-  # home.file = {
-  #   ".config/nvim/" = {
-  #     recursive = true;
-  #     source = ../../dot_config/nvim;
-  #   };
-  # };
+  home.file = {
+    ".config/nvim/" = {
+      recursive = true;
+      source = ../../dot_config/nvim;
+    };
+  };
 }

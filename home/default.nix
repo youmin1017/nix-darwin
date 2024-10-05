@@ -6,6 +6,7 @@
     ./shell.nix
     ./core.nix
     ./git.nix
+    ./kitty.nix
     ./starship.nix
     ./zoxide.nix
   ];
