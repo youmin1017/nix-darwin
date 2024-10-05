@@ -30,6 +30,7 @@
       # languages
       go
       rustup
+      nodejs_22
     ])
     ++ (with pkgs-stable; [
       # list of unstable packages
