@@ -17,6 +17,7 @@
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     nixfmt-rfc-style
+    home-manager
     neovim
     git
   ];
@@ -44,6 +45,7 @@
       # TODO Feel free to add your favorite apps here.
 
       LINE = 539883307;
+      Messenger = 1480068668;
     };
 
     taps = [
@@ -52,16 +54,21 @@
 
     # `brew install`
     # TODO Feel free to add your favorite apps here.
-    brews =
-      [
-      ];
+    brews = [
+      "bitwarden-cli"
+    ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
+      "arc"
       "raycast"
       "karabiner-elements"
       "jordanbaird-ice"
+      "orbstack"
+      "notion"
+      "microsoft-teams"
+      "discord"
     ];
   };
 }

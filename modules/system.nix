@@ -22,6 +22,13 @@
         autohide = true;
       };
 
+      # Customize finder
+      finder = {
+        QuitMenuItem = true; # show quit finder in menu
+        ShowPathbar = true; # show path bar
+        ShowStatusBar = true; # show status bar
+      };
+
       # Customize trackpad
       trackpad = {
         Clicking = true; # enable tap to click
@@ -40,7 +47,9 @@
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
 
-  environment.systemPackages = with pkgs; [ pkgs.nixfmt-rfc-style ];
+  environment.systemPackages = with pkgs; [
+    nixfmt-rfc-style
+  ];
 
   # Fonts
   fonts = {
