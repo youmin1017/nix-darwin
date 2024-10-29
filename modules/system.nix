@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 ###################################################################################
 #
 #  macOS's System configuration
@@ -10,13 +9,11 @@
 #    https://github.com/yannbertrand/macos-defaults
 #
 ###################################################################################
-
 {
   system = {
     stateVersion = 5;
 
     defaults = {
-
       # Customize dock
       dock = {
         autohide = true;
@@ -35,7 +32,6 @@
         TrackpadRightClick = true; # enable two finger right click
         TrackpadThreeFingerDrag = true; # enable three finger drag
       };
-
     };
   };
 
@@ -45,7 +41,7 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
-  environment.shells = [ pkgs.zsh ];
+  environment.shells = [pkgs.zsh];
 
   environment.systemPackages = with pkgs; [
     nixfmt-rfc-style
