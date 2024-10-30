@@ -31,7 +31,7 @@ darwin-debug:
 
 [group('home-manager')]
 hm:
-  home-manager --extra-experimental-features switch --flake ./home-manager
+  home-manager --extra-experimental-features 'nix-command flakes' switch --flake ./home-manager
 
 ############################################################################
 #
