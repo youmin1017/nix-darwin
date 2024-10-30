@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   # enable flakes globally
   nix.settings.experimental-features = [
     "nix-command"

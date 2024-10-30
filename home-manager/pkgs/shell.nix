@@ -2,7 +2,8 @@
   pkgs,
   system,
   ...
-}: {
+}:
+{
   # home.packages = with pkgs; [
   #   zsh-autosuggestions
   # ];
@@ -37,19 +38,18 @@
     };
   };
 
-  home.shellAliases = let
-    isDarwin = system == "aarch64-darwin";
-  in {
-    k = "kubectl";
-    ii = "open -a Finder.app";
-    cz = "chezmoi";
-    rm =
-      if isDarwin
-      then "trash"
-      else "rm";
-    ssh = "kitten ssh";
+  home.shellAliases =
+    let
+      isDarwin = system == "aarch64-darwin";
+    in
+    {
+      k = "kubectl";
+      ii = "open -a Finder.app";
+      cz = "chezmoi";
+      rm = if isDarwin then "trash" else "rm";
+      ssh = "kitten ssh";
 
-    urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-    urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-  };
+      urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
+      urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+    };
 }
