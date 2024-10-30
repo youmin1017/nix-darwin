@@ -31,7 +31,7 @@ darwin-debug:
 
 [group('home-manager')]
 hm:
-  home-manager switch --flake ./home-manager
+  home-manager --extra-experimental-features switch --flake ./home-manager
 
 ############################################################################
 #
