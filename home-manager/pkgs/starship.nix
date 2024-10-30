@@ -8,6 +8,7 @@
     enableNushellIntegration = true;
 
     settings = {
+      container.disabled = true;
       add_newline = false;
       character = {
         success_symbol = "[➜](bold green)";

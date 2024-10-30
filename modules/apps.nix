@@ -16,9 +16,10 @@
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     nixfmt-rfc-style
-    home-manager
-    just
     git
+    home-manager
+    jetbrains.datagrip
+    jetbrains.rider
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -69,6 +70,7 @@
       "notion"
       "microsoft-teams"
       "discord"
+      "obsidian"
     ];
   };
 }
