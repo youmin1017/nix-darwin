@@ -4,6 +4,7 @@ return {
   { import = "configs.lang.svelte" },
   { import = "configs.lang.vtsls" },
   { import = "configs.lang.nix" },
+  { import = "configs.lang.rust" },
 
   {
     "neovim/nvim-lspconfig",
