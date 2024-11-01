@@ -130,8 +130,6 @@ return {
     -- })
     require("neo-tree").setup(opts)
     local events = require "neo-tree.events"
-    events.fire_event(events.GIT_EVENT)
-    vim.api.nvim_create_autocmd("TermClose", {
       pattern = "*lazygit",
       callback = function()
         if package.loaded["neo-tree.sources.git_status"] then
