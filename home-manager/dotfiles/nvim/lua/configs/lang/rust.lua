@@ -15,7 +15,9 @@ return {
     ft = { "rust" },
     opts = {
       server = {
+        on_init = require("configs.lspconfig").on_init,
         on_attach = function(_, bufnr)
+          require("configs.lspconfig").on_attach(_, bufnr)
           vim.keymap.set("n", "<leader>ca", function()
             vim.cmd.RustLsp "codeAction"
           end, { desc = "Code Action", buffer = bufnr })
@@ -23,6 +25,7 @@ return {
             vim.cmd.RustLsp "debuggables"
           end, { desc = "Rust Debuggables", buffer = bufnr })
         end,
+        capabilities = require("configs.lspconfig").capabilities,
         default_settings = {
           -- rust-analyzer language server configuration
           ["rust-analyzer"] = {
