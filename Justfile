@@ -42,6 +42,7 @@ hm:
 czsync:
   rsync -avr ./home-manager/dotfiles/nvim/ ~/.local/share/chezmoi/dot_config/nvim/
   cd ~/.local/share/chezmoi/
+  pwd
   git add .
   git commit -m "sync nvim config"
   git push
