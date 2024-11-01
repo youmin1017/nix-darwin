@@ -54,6 +54,7 @@ return {
   opts = {
     sources = { "filesystem", "buffers", "git_status" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+    enable_git_status = true,
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
@@ -128,6 +129,8 @@ return {
     --   { event = events.FILE_RENAMED, handler = on_move },
     -- })
     require("neo-tree").setup(opts)
+    local events = require "neo-tree.events"
+    events.fire_event(events.GIT_EVENT)
     vim.api.nvim_create_autocmd("TermClose", {
       pattern = "*lazygit",
       callback = function()
