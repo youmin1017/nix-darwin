@@ -38,14 +38,13 @@ hm:
 #  nix related commands
 #
 ############################################################################
+cz_dir := "~/.local/share/chezmoi"
 [group('chezmoi')]
 czsync:
   rsync -avr ./home-manager/dotfiles/nvim/ ~/.local/share/chezmoi/dot_config/nvim/
-  cd ~/.local/share/chezmoi/
-  pwd
-  git add .
-  git commit -m "sync nvim config"
-  git push
+  git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} add . 
+  git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} commit -m "update nvim configs"
+  git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} push
 
 ############################################################################
 #
