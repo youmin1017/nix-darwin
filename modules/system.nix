@@ -17,6 +17,7 @@
       # Customize dock
       dock = {
         autohide = true;
+        show-recents = false;
       };
 
       # Customize finder

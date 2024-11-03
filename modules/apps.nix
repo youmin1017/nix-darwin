@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  # imports = [
+  #   ./dock.nix
+  # ];
   ##########################################################################
   #
   #  Install all apps and packages here.
@@ -61,6 +64,7 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
+      "kitty"
       "arc"
       "appcleaner"
       "raycast"
@@ -73,4 +77,20 @@
       "obsidian"
     ];
   };
+
+  system.defaults.dock.persistent-apps = [
+    "/System/Applications/Launchpad.app/"
+    "/Applications/Arc.app"
+    "/Applications/kitty.app/"
+    "/Applications/Obsidian.app"
+    "/Applications/Notion.app"
+    "/Applications/Notion Calendar.app"
+    "/System/Applications/Mail.app"
+    "/System/Applications/Messages.app"
+    "/Applications/LINE.app"
+    "/Applications/Messenger.app"
+    "/Applications/Microsoft Teams.app"
+    "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
+    "/System/Applications/iPhone Mirroring.app"
+  ];
 }
