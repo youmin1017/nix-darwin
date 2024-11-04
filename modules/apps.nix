@@ -18,6 +18,7 @@
     nixfmt-rfc-style
     git
     home-manager
+    hadolint # Dockerfile linter
     jetbrains.datagrip
     jetbrains.rider
   ];
@@ -85,6 +86,7 @@
     "/System/Applications/Mail.app"
     "/System/Applications/Messages.app"
     "/Applications/LINE.app"
+    "/Applications/Discord.app"
     "/Applications/Messenger.app"
     "/Applications/Microsoft Teams.app"
     "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
