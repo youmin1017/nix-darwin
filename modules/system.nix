@@ -18,6 +18,7 @@
       dock = {
         autohide = true;
         show-recents = false;
+        tilesize = 64;
       };
 
       # Customize finder
