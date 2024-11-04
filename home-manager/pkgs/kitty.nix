@@ -20,7 +20,7 @@
       kitty_mod = "ctrl+shift";
     };
 
-    themeFile = "dracula";
+    themeFile = "Dracula";
 
     keybindings = {
       "f4" = "launch --location=split";
