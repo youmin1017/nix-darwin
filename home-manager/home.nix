@@ -1,13 +1,14 @@
 {
   config,
   pkgs,
+  system,
   ...
 }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "youmin";
-  home.homeDirectory = "/Users/youmin";
+  home.homeDirectory = if system == "aarch64-darwin" then "/Users/youmin" else "/home/youmin";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

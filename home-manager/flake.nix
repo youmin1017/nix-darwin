@@ -8,34 +8,70 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      flake-utils,
       ...
     }:
     let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
+      ourSystems = [
+        "aarch64-darwin"
+        "x86_64-linux"
+      ];
     in
-    {
-      homeConfigurations."youmin" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+    flake-utils.lib.eachSystem ourSystems (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        packages = {
+          homeConfigurations."youmin" = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          ./home.nix
-          ./pkgs
-        ];
+            # Specify your home configuration modules here, for example,
+            # the path to your home.nix.
+            modules = [
+              ./home.nix
+              ./pkgs
+            ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = {
-          inherit system;
+            # Optionally use extraSpecialArgs
+            # to pass through arguments to home.nix
+            extraSpecialArgs = {
+              inherit system;
+            };
+          };
         };
-      };
-    };
+      }
+    );
+
+  # let
+  #   system = "aarch64-darwin";
+  #   pkgs = nixpkgs.legacyPackages.${system};
+  # in
+  # {
+  #   homeConfigurations."youmin" = home-manager.lib.homeManagerConfiguration {
+  #     inherit pkgs;
+  #
+  #     # Specify your home configuration modules here, for example,
+  #     # the path to your home.nix.
+  #     modules = [
+  #       ./home.nix
+  #       ./pkgs
+  #     ];
+  #
+  #     # Optionally use extraSpecialArgs
+  #     # to pass through arguments to home.nix
+  #     extraSpecialArgs = {
+  #       inherit system;
+  #     };
+  #   };
+  # };
 }
