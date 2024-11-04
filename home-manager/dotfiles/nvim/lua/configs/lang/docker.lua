@@ -43,4 +43,12 @@ return {
       table.insert(opts.__setup_functions, setup)
     end,
   },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        dockerfile = { "hadolint" },
+      },
+    },
+  },
 }

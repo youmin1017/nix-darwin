@@ -5,9 +5,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       events = { "BufEnter", "BufWritePost", "InsertLeave" },
-      linters_by_ft = {
-        dockerfile = { "hadolint" },
-      },
       linters = {},
     },
     config = function(_, opts)

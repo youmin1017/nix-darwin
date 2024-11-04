@@ -29,8 +29,8 @@ M.on_attach = function(_, bufnr)
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
   map("n", "<leader>cA", utils.lsp.action.source, opts "Source Action")
 
-  map("n", "[d", vim.diagnostic.goto_prev, opts "Prev diagnostic")
-  map("n", "]d", vim.diagnostic.goto_next, opts "Next diagnostic")
+  -- map("n", "[d", vim.diagnostic.goto_prev, opts "Prev diagnostic")
+  -- map("n", "]d", vim.diagnostic.goto_next, opts "Next diagnostic")
 
   map("n", "<leader>q", vim.diagnostic.setloclist, opts "Diagnostic loclist")
 end
