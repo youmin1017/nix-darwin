@@ -13,6 +13,7 @@
     yq-go # yaml processer https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
     just # A handy way to save and run project-specific commands
+    bat # A cat(1) clone with wings
 
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat

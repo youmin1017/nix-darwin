@@ -57,6 +57,13 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "bitwarden-cli"
+
+      {
+        name = "postgresql@17";
+        restart_service = true;
+        link = true;
+        conflicts_with = [ "postgresql" ];
+      }
     ];
 
     # `brew install --cask`

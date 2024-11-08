@@ -7,6 +7,8 @@ return {
   { import = "configs.lang.rust" },
   { import = "configs.lang.docker" },
   { import = "configs.lang.sql" },
+  { import = "configs.lang.go" },
+  { import = "configs.lang.json" },
 
   {
     "neovim/nvim-lspconfig",
