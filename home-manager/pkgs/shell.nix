@@ -10,6 +10,7 @@
   programs.zsh = {
     enable = true;
     initExtraBeforeCompInit = ''
+      zstyle ':completion:*' matcher-list '''''' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
       function zvm_config() {
         ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
         ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
@@ -23,6 +24,8 @@
     initExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     '';
+
+    autocd = true;
 
     enableCompletion = false;
     autosuggestion.enable = true;

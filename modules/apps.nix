@@ -98,5 +98,6 @@
     "/Applications/Microsoft Teams.app"
     "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
     "/System/Applications/iPhone Mirroring.app"
+    "/Users/youmin/Applications/iCloud.app"
   ];
 }
