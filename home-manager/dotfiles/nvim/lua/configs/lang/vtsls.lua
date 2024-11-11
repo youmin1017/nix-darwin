@@ -24,11 +24,19 @@ end
 --- @type NvPluginSpec
 return {
   {
-    "neovim/nvim-lspconfig",
+    "williamboman/mason-lspconfig",
     opts = function(_, opts)
-      opts.__setup_functions = opts.__setup_functions or {}
-      table.insert(opts.__setup_functions, setup)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "vtsls" })
     end,
+  },
+  {
+    "williamboman/mason-lspconfig",
+    opts = {
+      handlers = {
+        ["vtsls"] = setup,
+      },
+    },
   },
 }
 

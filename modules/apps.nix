@@ -57,6 +57,7 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "bitwarden-cli"
+      "deno"
 
       {
         name = "postgresql@17";

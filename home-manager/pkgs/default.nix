@@ -31,7 +31,6 @@
     go
     rustup
     nodejs_22
-    deno
     bun
   ];
 

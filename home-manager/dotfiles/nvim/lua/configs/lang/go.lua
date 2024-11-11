@@ -2,25 +2,8 @@ local function setup()
   local lsp = require "configs.lspconfig"
 
   require("lspconfig").gopls.setup {
-    on_attach = function(client, bufnr)
-      lsp.on_attach(client, bufnr)
-    end,
-    capabilities = lsp.capabilities,
-    on_init = lsp.on_init,
-  }
-end
-
---- @type NvPluginSpec
-return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = function(_, opts)
-      opts.__setup_functions = opts.__setup_functions or {}
-      table.insert(opts.__setup_functions, setup)
-
-      opts.servers.settings = opts.servers.settings or {}
-      opts.servers.settings.gopls = opts.servers.settings.gopls or {}
-      opts.servers.settings.gopls = {
+    settings = {
+      gopls = {
         gofumpt = true,
         codelenses = {
           gc_details = false,
@@ -53,10 +36,18 @@ return {
         staticcheck = true,
         directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
         semanticTokens = true,
-      }
+      },
+    },
+    on_attach = function(client, bufnr)
+      lsp.on_attach(client, bufnr)
     end,
-  },
+    capabilities = lsp.capabilities,
+    on_init = lsp.on_init,
+  }
+end
 
+--- @type NvPluginSpec
+return {
   {
     "williamboman/mason.nvim",
     opts = { ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl", "delve" } },
@@ -65,11 +56,11 @@ return {
   {
     "stevearc/conform.nvim",
     optional = true,
-    opts = function(_, opts)
-      opts.formatters_by_ft = opts.formatters_by_ft or {}
-
-      opts.formatters_by_ft.go = { "goimports", "gofumpt" }
-    end,
+    opts = {
+      formatters_by_ft = {
+        go = { "goimports", "gofumpt" },
+      },
+    },
   },
 
   {
@@ -78,5 +69,21 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       table.insert(opts.ensure_installed, "go")
     end,
+  },
+
+  {
+    "williamboman/mason-lspconfig",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "gopls" })
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig",
+    opts = {
+      handlers = {
+        ["gopls"] = setup,
+      },
+    },
   },
 }

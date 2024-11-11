@@ -1,4 +1,4 @@
-local function setup()
+local function setup_docker()
   local lsp = require "configs.lspconfig"
 
   require("lspconfig").dockerls.setup {
@@ -8,6 +8,11 @@ local function setup()
     capabilities = lsp.capabilities,
     on_init = lsp.on_init,
   }
+end
+
+local function setup_compose()
+  local lsp = require "configs.lspconfig"
+
   require("lspconfig").docker_compose_language_service.setup {
     on_attach = function(client, bufnr)
       lsp.on_attach(client, bufnr)
@@ -20,16 +25,6 @@ end
 --- @type NvPluginSpec
 return {
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- "hadolint",
-        "dockerfile-language-server",
-        "docker-compose-language-service",
-      },
-    },
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
@@ -37,17 +32,26 @@ return {
     end,
   },
   {
-    "neovim/nvim-lspconfig",
-    opts = function(_, opts)
-      opts.__setup_functions = opts.__setup_functions or {}
-      table.insert(opts.__setup_functions, setup)
-    end,
-  },
-  {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
         dockerfile = { "hadolint" },
+      },
+    },
+  },
+  {
+    "williamboman/mason-lspconfig",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "dockerls" })
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig",
+    opts = {
+      handlers = {
+        ["dockerls"] = setup_docker,
+        ["docker_compose_language_service"] = setup_compose,
       },
     },
   },

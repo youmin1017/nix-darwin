@@ -56,6 +56,9 @@ return {
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     enable_git_status = true,
     filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+      },
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,

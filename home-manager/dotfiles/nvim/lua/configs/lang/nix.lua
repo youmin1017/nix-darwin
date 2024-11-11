@@ -16,29 +16,32 @@ end
 return {
   {
     "stevearc/conform.nvim",
-    optional = true,
-    opts = function(_, opts)
-      opts.formatters_by_ft = opts.formatters_by_ft or {}
-
-      opts.formatters_by_ft.nix = { "nixfmt" }
-    end,
-  },
-  {
-    "williamboman/mason.nvim",
-    opts = { ensure_installed = { "nil" } },
+    opts = {
+      formatters_by_ft = {
+        nix = { "nixfmt" },
+      },
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      table.insert(opts.ensure_installed, "nix")
+      vim.list_extend(opts.ensure_installed, { "nix" })
     end,
   },
   {
-    "neovim/nvim-lspconfig",
+    "williamboman/mason-lspconfig",
     opts = function(_, opts)
-      opts.__setup_functions = opts.__setup_functions or {}
-      table.insert(opts.__setup_functions, setup)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "nil_ls" })
     end,
+  },
+  {
+    "williamboman/mason-lspconfig",
+    opts = {
+      handlers = {
+        ["nil_ls"] = setup,
+      },
+    },
   },
 }
