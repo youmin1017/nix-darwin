@@ -9,6 +9,7 @@ return {
   { import = "configs.lang.sql" },
   { import = "configs.lang.go" },
   { import = "configs.lang.json" },
+  { import = "configs.lang.yaml" },
   { import = "configs.lang.clangd" },
 
   -- { import = "configs.format.deno" },
