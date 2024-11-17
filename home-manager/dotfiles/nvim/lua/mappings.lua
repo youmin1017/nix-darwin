@@ -76,7 +76,7 @@ map("n", "<leader>bO", function()
 end, { desc = "buffer Close other buffer" })
 
 map("n", "<leader>bo", function()
-  require("nvchad.tabufline").closeAllBufs(false)
+  require("nvchad.tabufline").closeAllBufs()
 end, { desc = "buffer Close all buffer" })
 
 map("n", "<S-l>", function()

@@ -29,9 +29,11 @@
 
     # languages
     go
+    docker-client
     rustup
     nodejs_22
     bun
+    pnpm
   ];
 
   programs = {

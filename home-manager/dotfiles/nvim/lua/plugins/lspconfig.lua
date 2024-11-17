@@ -12,6 +12,8 @@ return {
   { import = "configs.lang.clangd" },
 
   -- { import = "configs.format.deno" },
+  { import = "configs.format.prettier" },
+
   {
     "neovim/nvim-lspconfig",
     -- event = { "VeryLazy", "BufRead" },
