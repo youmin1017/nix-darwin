@@ -22,7 +22,7 @@
     # misc
     onefetch # Git repository summary generator
     tokei # A program that displays statistics about your code
-    dotnetCorePackages.sdk_8_0_4xx
+    # dotnetCorePackages.sdk_8_0_4xx
 
     # productivity
     lazygit
@@ -32,6 +32,7 @@
     docker-client
     rustup
     nodejs_22
+    nodePackages.prettier
     bun
     pnpm
   ];
