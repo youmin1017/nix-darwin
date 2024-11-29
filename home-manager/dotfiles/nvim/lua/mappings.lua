@@ -86,3 +86,10 @@ end, { desc = "buffer goto next" })
 map("n", "<S-h>", function()
   require("nvchad.tabufline").prev()
 end, { desc = "buffer goto prev" })
+
+--     ╭───────────────────────────────────────────────────────────────────╮
+--     │                   Terminal                                        │
+--     ╰───────────────────────────────────────────────────────────────────╯
+map({ "n", "t" }, "<A-1>", function()
+  require("nvchad.term").toggle { cmd = "k9s", pos = "float", id = "k9sTerm" }
+end, { desc = "terminal toggle floating k9s term" })

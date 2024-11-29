@@ -19,18 +19,18 @@ end
 
 --- @type NvPluginSpec
 return {
-  {
-    "conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        ["svelte"] = { "prettier" },
-      },
-    },
-  },
-  {
-    "williamboman/mason.nvim",
-    opts = { ensure_installed = { "prettier" } },
-  },
+  -- {
+  --   "conform.nvim",
+  --   opts = {
+  --     formatters_by_ft = {
+  --       ["svelte"] = { "prettier" },
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = { ensure_installed = { "prettier" } },
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)

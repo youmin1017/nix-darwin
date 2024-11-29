@@ -29,12 +29,19 @@
 
     # languages
     go
-    docker-client
     rustup
     nodejs_22
     nodePackages.prettier
     bun
     pnpm
+
+    # devops
+    docker-client
+    talosctl
+    kubectl
+    kubernetes-helm
+    cilium-cli
+    k9s
   ];
 
   programs = {

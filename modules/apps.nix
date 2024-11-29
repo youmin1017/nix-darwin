@@ -72,6 +72,7 @@
     casks = [
       "kitty"
       "arc"
+      "zen-browser"
       "appcleaner"
       "raycast"
       "karabiner-elements"
@@ -87,6 +88,7 @@
   system.defaults.dock.persistent-apps = [
     "/System/Applications/Launchpad.app/"
     "/Applications/Arc.app"
+    "/Applications/Zen Browser.app"
     "/Applications/kitty.app/"
     "/Applications/Obsidian.app"
     "/Applications/Notion.app"

@@ -23,18 +23,6 @@ return {
         vue = "vue",
       }
 
-      opts.formatters.deno_fmt = {
-        args = function(self, ctx)
-          return {
-            "fmt",
-            "-",
-            "--unstable-component",
-            "--ext",
-            supported[vim.bo[ctx.buf].filetype],
-          }
-        end,
-      }
-
       for ft, _ in pairs(supported) do
         opts.formatters_by_ft[ft] = { "deno_fmt" }
       end
