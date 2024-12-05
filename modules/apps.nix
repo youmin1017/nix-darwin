@@ -15,10 +15,8 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    nixfmt-rfc-style
     git
     home-manager
-    hadolint # Dockerfile linter
     jetbrains.datagrip
     jetbrains.rider
   ];
@@ -58,7 +56,6 @@
     brews = [
       "bitwarden-cli"
       "deno"
-
       {
         name = "postgresql@17";
         restart_service = true;
@@ -72,7 +69,8 @@
     casks = [
       "kitty"
       "arc"
-      "zen-browser"
+      # "zen-browser"
+      "zed"
       "appcleaner"
       "raycast"
       "karabiner-elements"
@@ -86,10 +84,11 @@
   };
 
   system.defaults.dock.persistent-apps = [
-    "/System/Applications/Launchpad.app/"
+    "/System/Applications/Launchpad.app"
     "/Applications/Arc.app"
-    "/Applications/Zen Browser.app"
-    "/Applications/kitty.app/"
+    "/Applications/Zed.app"
+    # "/Applications/Zen Browser.app"
+    "/Applications/kitty.app"
     "/Applications/Obsidian.app"
     "/Applications/Notion.app"
     "/Applications/Notion Calendar.app"

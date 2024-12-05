@@ -20,6 +20,7 @@
     nmap # A utility for network discovery and security auditing
 
     # misc
+    husky # Git hooks made easy
     onefetch # Git repository summary generator
     tokei # A program that displays statistics about your code
     # dotnetCorePackages.sdk_8_0_4xx
@@ -27,12 +28,16 @@
     # productivity
     lazygit
 
+    # lsp related
+    nixfmt-rfc-style # Nix formatter
+    nil
+    hadolint # Dockerfile linter
+
     # languages
     go
     rustup
     nodejs_22
     nodePackages.prettier
-    bun
     pnpm
 
     # devops
