@@ -72,7 +72,7 @@ map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 -- map("n", "<S-tab>", "<cmd>tabprevious<CR>", { desc = "buffer goto next tab" })
 
 map("n", "<leader>bO", function()
-  require("nvchad.tabufline").closeAllBufs(true)
+  require("nvchad.tabufline").closeAllBufs(false)
 end, { desc = "buffer Close other buffer" })
 
 map("n", "<leader>bo", function()

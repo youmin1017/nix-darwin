@@ -14,16 +14,15 @@
     fzf # A command-line fuzzy finder
     just # A handy way to save and run project-specific commands
     bat # A cat(1) clone with wings
-
+    direnv # Unclutter your .profile
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
 
     # misc
-    husky # Git hooks made easy
+    # husky # Git hooks made easy
     onefetch # Git repository summary generator
     tokei # A program that displays statistics about your code
-    # dotnetCorePackages.sdk_8_0_4xx
 
     # productivity
     lazygit
@@ -31,21 +30,22 @@
     # lsp related
     nixfmt-rfc-style # Nix formatter
     nil
+    helm-ls
     hadolint # Dockerfile linter
 
     # languages
     go
+    goose
     rustup
     nodejs_22
-    nodePackages.prettier
     pnpm
 
     # devops
     docker-client
-    talosctl
-    kubectl
     kubernetes-helm
-    cilium-cli
+    kubectl
+    werf
+    buildah
     k9s
   ];
 

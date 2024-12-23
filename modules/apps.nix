@@ -19,6 +19,7 @@
     home-manager
     jetbrains.datagrip
     jetbrains.rider
+    bruno # A Opensource IDE For Exploring and Testing Api's
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -67,19 +68,19 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      "kitty"
       "arc"
-      # "zen-browser"
-      "zed"
       "appcleaner"
-      "raycast"
-      "karabiner-elements"
-      "jordanbaird-ice"
-      "orbstack"
-      "notion"
-      "microsoft-teams"
+      "kitty"
+      "chatgpt"
       "discord"
+      "jordanbaird-ice"
+      "karabiner-elements"
+      "microsoft-teams"
+      "notion"
+      "orbstack"
       "obsidian"
+      "raycast"
+      "zed"
     ];
   };
 
@@ -87,7 +88,6 @@
     "/System/Applications/Launchpad.app"
     "/Applications/Arc.app"
     "/Applications/Zed.app"
-    # "/Applications/Zen Browser.app"
     "/Applications/kitty.app"
     "/Applications/Obsidian.app"
     "/Applications/Notion.app"
