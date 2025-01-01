@@ -35,6 +35,7 @@
 
     # languages
     go
+    ko
     goose
     rustup
     nodejs_22

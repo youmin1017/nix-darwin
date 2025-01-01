@@ -70,16 +70,18 @@
     casks = [
       "arc"
       "appcleaner"
-      "kitty"
       "chatgpt"
       "discord"
+      "ghostty"
       "jordanbaird-ice"
       "karabiner-elements"
+      # "kitty"
       "microsoft-teams"
       "notion"
       "orbstack"
       "obsidian"
       "raycast"
+      "spotify"
       "zed"
     ];
   };
@@ -88,7 +90,8 @@
     "/System/Applications/Launchpad.app"
     "/Applications/Arc.app"
     "/Applications/Zed.app"
-    "/Applications/kitty.app"
+    # "/Applications/Kitty.app"
+    "/Applications/Ghostty.app"
     "/Applications/Obsidian.app"
     "/Applications/Notion.app"
     "/Applications/Notion Calendar.app"
@@ -101,5 +104,6 @@
     "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
     "/System/Applications/iPhone Mirroring.app"
     "/Users/youmin/Applications/iCloud.app"
+    "/Applications/Spotify.app"
   ];
 }

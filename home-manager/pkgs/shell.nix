@@ -22,7 +22,8 @@
       }
     '';
     initExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
+      export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
     '';
 
     autocd = true;
@@ -50,7 +51,6 @@
       ii = "open -a Finder.app";
       cz = "chezmoi";
       rm = if isDarwin then "trash" else "rm";
-      ssh = "kitten ssh";
       lg = "lazygit";
 
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
