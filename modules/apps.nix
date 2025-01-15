@@ -16,9 +16,6 @@
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     git
-    home-manager
-    jetbrains.datagrip
-    jetbrains.rider
     bruno # A Opensource IDE For Exploring and Testing Api's
   ];
   environment.variables.EDITOR = "nvim";
@@ -57,12 +54,8 @@
     brews = [
       "bitwarden-cli"
       "deno"
-      {
-        name = "postgresql@17";
-        restart_service = true;
-        link = true;
-        conflicts_with = [ "postgresql" ];
-      }
+      "ko"
+      "podman"
     ];
 
     # `brew install --cask`
@@ -71,16 +64,18 @@
       "arc"
       "appcleaner"
       "chatgpt"
+      "datagrip"
       "discord"
       "ghostty"
       "jordanbaird-ice"
       "karabiner-elements"
-      # "kitty"
       "microsoft-teams"
       "notion"
       "orbstack"
       "obsidian"
+      "podman-desktop"
       "raycast"
+      "rider"
       "spotify"
       "zed"
     ];
@@ -90,20 +85,19 @@
     "/System/Applications/Launchpad.app"
     "/Applications/Arc.app"
     "/Applications/Zed.app"
-    # "/Applications/Kitty.app"
     "/Applications/Ghostty.app"
     "/Applications/Obsidian.app"
     "/Applications/Notion.app"
     "/Applications/Notion Calendar.app"
     "/System/Applications/Mail.app"
-    "/System/Applications/Messages.app"
     "/Applications/LINE.app"
     "/Applications/Discord.app"
     "/Applications/Messenger.app"
-    "/Applications/Microsoft Teams.app"
-    "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
-    "/System/Applications/iPhone Mirroring.app"
+    # "${pkgs.jetbrains.datagrip}/Applications/DataGrip.app"
+    "/Applications/DataGrip.app"
+    "/Applications/Podman Desktop.app"
     "/Users/youmin/Applications/iCloud.app"
     "/Applications/Spotify.app"
+    "/System/Applications/Notes.app"
   ];
 }

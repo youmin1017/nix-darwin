@@ -48,6 +48,7 @@
     in
     {
       k = "kubectl";
+      pm = "podman";
       ii = "open -a Finder.app";
       cz = "chezmoi";
       rm = if isDarwin then "trash" else "rm";

@@ -18,6 +18,7 @@
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
+    unar # A program to extract, list, test and view the contents of archives
 
     # misc
     # husky # Git hooks made easy
@@ -35,14 +36,13 @@
 
     # languages
     go
-    ko
     goose
     rustup
     nodejs_22
     pnpm
 
     # devops
-    docker-client
+    # docker-client
     kubernetes-helm
     kubectl
     werf

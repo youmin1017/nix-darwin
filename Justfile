@@ -29,9 +29,10 @@ darwin-debug:
 #
 ############################################################################
 
+#home-manager --extra-experimental-features 'nix-command flakes' switch --flake ./home-manager
 [group('home-manager')]
-hm:
-  home-manager --extra-experimental-features 'nix-command flakes' switch --flake ./home-manager
+home:
+  nix run home-manager/release-24.11 -- init --switch ./home-manager
 
 ############################################################################
 #
